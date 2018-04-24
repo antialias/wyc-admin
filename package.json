@@ -1,0 +1,11 @@
+{
+  "name": "wyc-admin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:antialias/wyc-admin.git",
+  "author": "Thomas Hallock <hallock@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  }
+}
