@@ -1,0 +1,15 @@
+language: node_js
+integrations:
+  hub:
+    - integrationName: docker_registry_antialias
+      type: dockerRegistryLogin
+branches:
+  only:
+    - master
+env:
+  global:
+    - DOCKER_ACC=antialias
+    - REPO=wyc-admin
+post_ci:
+  - docker build  -t $DOCKER_ACC/$REPO:$BRANCH.$BUILD_NUMBER
+  - if [ "$IS_PULL_REQUEST" ]; then docker push $DOCKER_ACC/$REPO:$BRANCH.$BUILD_NUMBER; fi
